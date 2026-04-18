@@ -1,0 +1,406 @@
+== Source Information ==
+
+These frames were extracted from [[File:hero-sequence.mp4]] using [https://videotojpg.com videotojpg.com].
+
+=== Suggested {{Information}} template ===
+
+<nowiki>
+{{Information
+|description=Frame extracted from [[File:hero-sequence.mp4]]
+|source={{Extracted from|hero-sequence.mp4}}
+|date={{According to Exif data}}
+|author=
+|permission=
+|other versions=
+}}
+</nowiki>
+
+=== Extracted frames ===
+
+* [[File:img_00001.jpg]] - frame at 0s
+* [[File:img_00002.jpg]] - frame at 0s42ms
+* [[File:img_00003.jpg]] - frame at 0s83ms
+* [[File:img_00004.jpg]] - frame at 0s125ms
+* [[File:img_00005.jpg]] - frame at 0s167ms
+* [[File:img_00006.jpg]] - frame at 0s208ms
+* [[File:img_00007.jpg]] - frame at 0s250ms
+* [[File:img_00008.jpg]] - frame at 0s292ms
+* [[File:img_00009.jpg]] - frame at 0s333ms
+* [[File:img_00010.jpg]] - frame at 0s375ms
+* [[File:img_00011.jpg]] - frame at 0s417ms
+* [[File:img_00012.jpg]] - frame at 0s458ms
+* [[File:img_00013.jpg]] - frame at 0s500ms
+* [[File:img_00014.jpg]] - frame at 0s542ms
+* [[File:img_00015.jpg]] - frame at 0s583ms
+* [[File:img_00016.jpg]] - frame at 0s625ms
+* [[File:img_00017.jpg]] - frame at 0s667ms
+* [[File:img_00018.jpg]] - frame at 0s708ms
+* [[File:img_00019.jpg]] - frame at 0s750ms
+* [[File:img_00020.jpg]] - frame at 0s792ms
+* [[File:img_00021.jpg]] - frame at 0s833ms
+* [[File:img_00022.jpg]] - frame at 0s875ms
+* [[File:img_00023.jpg]] - frame at 0s917ms
+* [[File:img_00024.jpg]] - frame at 0s958ms
+* [[File:img_00025.jpg]] - frame at 1s
+* [[File:img_00026.jpg]] - frame at 1s42ms
+* [[File:img_00027.jpg]] - frame at 1s83ms
+* [[File:img_00028.jpg]] - frame at 1s125ms
+* [[File:img_00029.jpg]] - frame at 1s167ms
+* [[File:img_00030.jpg]] - frame at 1s208ms
+* [[File:img_00031.jpg]] - frame at 1s250ms
+* [[File:img_00032.jpg]] - frame at 1s292ms
+* [[File:img_00033.jpg]] - frame at 1s333ms
+* [[File:img_00034.jpg]] - frame at 1s375ms
+* [[File:img_00035.jpg]] - frame at 1s417ms
+* [[File:img_00036.jpg]] - frame at 1s458ms
+* [[File:img_00037.jpg]] - frame at 1s500ms
+* [[File:img_00038.jpg]] - frame at 1s542ms
+* [[File:img_00039.jpg]] - frame at 1s583ms
+* [[File:img_00040.jpg]] - frame at 1s625ms
+* [[File:img_00041.jpg]] - frame at 1s667ms
+* [[File:img_00042.jpg]] - frame at 1s708ms
+* [[File:img_00043.jpg]] - frame at 1s750ms
+* [[File:img_00044.jpg]] - frame at 1s792ms
+* [[File:img_00045.jpg]] - frame at 1s833ms
+* [[File:img_00046.jpg]] - frame at 1s875ms
+* [[File:img_00047.jpg]] - frame at 1s917ms
+* [[File:img_00048.jpg]] - frame at 1s958ms
+* [[File:img_00049.jpg]] - frame at 2s
+* [[File:img_00050.jpg]] - frame at 2s42ms
+* [[File:img_00051.jpg]] - frame at 2s83ms
+* [[File:img_00052.jpg]] - frame at 2s125ms
+* [[File:img_00053.jpg]] - frame at 2s167ms
+* [[File:img_00054.jpg]] - frame at 2s208ms
+* [[File:img_00055.jpg]] - frame at 2s250ms
+* [[File:img_00056.jpg]] - frame at 2s292ms
+* [[File:img_00057.jpg]] - frame at 2s333ms
+* [[File:img_00058.jpg]] - frame at 2s375ms
+* [[File:img_00059.jpg]] - frame at 2s417ms
+* [[File:img_00060.jpg]] - frame at 2s458ms
+* [[File:img_00061.jpg]] - frame at 2s500ms
+* [[File:img_00062.jpg]] - frame at 2s542ms
+* [[File:img_00063.jpg]] - frame at 2s583ms
+* [[File:img_00064.jpg]] - frame at 2s625ms
+* [[File:img_00065.jpg]] - frame at 2s667ms
+* [[File:img_00066.jpg]] - frame at 2s708ms
+* [[File:img_00067.jpg]] - frame at 2s750ms
+* [[File:img_00068.jpg]] - frame at 2s792ms
+* [[File:img_00069.jpg]] - frame at 2s833ms
+* [[File:img_00070.jpg]] - frame at 2s875ms
+* [[File:img_00071.jpg]] - frame at 2s917ms
+* [[File:img_00072.jpg]] - frame at 2s958ms
+* [[File:img_00073.jpg]] - frame at 3s
+* [[File:img_00074.jpg]] - frame at 3s42ms
+* [[File:img_00075.jpg]] - frame at 3s83ms
+* [[File:img_00076.jpg]] - frame at 3s125ms
+* [[File:img_00077.jpg]] - frame at 3s167ms
+* [[File:img_00078.jpg]] - frame at 3s208ms
+* [[File:img_00079.jpg]] - frame at 3s250ms
+* [[File:img_00080.jpg]] - frame at 3s292ms
+* [[File:img_00081.jpg]] - frame at 3s333ms
+* [[File:img_00082.jpg]] - frame at 3s375ms
+* [[File:img_00083.jpg]] - frame at 3s417ms
+* [[File:img_00084.jpg]] - frame at 3s458ms
+* [[File:img_00085.jpg]] - frame at 3s500ms
+* [[File:img_00086.jpg]] - frame at 3s542ms
+* [[File:img_00087.jpg]] - frame at 3s583ms
+* [[File:img_00088.jpg]] - frame at 3s625ms
+* [[File:img_00089.jpg]] - frame at 3s667ms
+* [[File:img_00090.jpg]] - frame at 3s708ms
+* [[File:img_00091.jpg]] - frame at 3s750ms
+* [[File:img_00092.jpg]] - frame at 3s792ms
+* [[File:img_00093.jpg]] - frame at 3s833ms
+* [[File:img_00094.jpg]] - frame at 3s875ms
+* [[File:img_00095.jpg]] - frame at 3s917ms
+* [[File:img_00096.jpg]] - frame at 3s958ms
+* [[File:img_00097.jpg]] - frame at 4s
+* [[File:img_00098.jpg]] - frame at 4s42ms
+* [[File:img_00099.jpg]] - frame at 4s83ms
+* [[File:img_00100.jpg]] - frame at 4s125ms
+* [[File:img_00101.jpg]] - frame at 4s167ms
+* [[File:img_00102.jpg]] - frame at 4s208ms
+* [[File:img_00103.jpg]] - frame at 4s250ms
+* [[File:img_00104.jpg]] - frame at 4s292ms
+* [[File:img_00105.jpg]] - frame at 4s333ms
+* [[File:img_00106.jpg]] - frame at 4s375ms
+* [[File:img_00107.jpg]] - frame at 4s417ms
+* [[File:img_00108.jpg]] - frame at 4s458ms
+* [[File:img_00109.jpg]] - frame at 4s500ms
+* [[File:img_00110.jpg]] - frame at 4s542ms
+* [[File:img_00111.jpg]] - frame at 4s583ms
+* [[File:img_00112.jpg]] - frame at 4s625ms
+* [[File:img_00113.jpg]] - frame at 4s667ms
+* [[File:img_00114.jpg]] - frame at 4s708ms
+* [[File:img_00115.jpg]] - frame at 4s750ms
+* [[File:img_00116.jpg]] - frame at 4s792ms
+* [[File:img_00117.jpg]] - frame at 4s833ms
+* [[File:img_00118.jpg]] - frame at 4s875ms
+* [[File:img_00119.jpg]] - frame at 4s917ms
+* [[File:img_00120.jpg]] - frame at 4s958ms
+* [[File:img_00121.jpg]] - frame at 5s
+* [[File:img_00122.jpg]] - frame at 5s42ms
+* [[File:img_00123.jpg]] - frame at 5s83ms
+* [[File:img_00124.jpg]] - frame at 5s125ms
+* [[File:img_00125.jpg]] - frame at 5s167ms
+* [[File:img_00126.jpg]] - frame at 5s208ms
+* [[File:img_00127.jpg]] - frame at 5s250ms
+* [[File:img_00128.jpg]] - frame at 5s292ms
+* [[File:img_00129.jpg]] - frame at 5s333ms
+* [[File:img_00130.jpg]] - frame at 5s375ms
+* [[File:img_00131.jpg]] - frame at 5s417ms
+* [[File:img_00132.jpg]] - frame at 5s458ms
+* [[File:img_00133.jpg]] - frame at 5s500ms
+* [[File:img_00134.jpg]] - frame at 5s542ms
+* [[File:img_00135.jpg]] - frame at 5s583ms
+* [[File:img_00136.jpg]] - frame at 5s625ms
+* [[File:img_00137.jpg]] - frame at 5s667ms
+* [[File:img_00138.jpg]] - frame at 5s708ms
+* [[File:img_00139.jpg]] - frame at 5s750ms
+* [[File:img_00140.jpg]] - frame at 5s792ms
+* [[File:img_00141.jpg]] - frame at 5s833ms
+* [[File:img_00142.jpg]] - frame at 5s875ms
+* [[File:img_00143.jpg]] - frame at 5s917ms
+* [[File:img_00144.jpg]] - frame at 5s958ms
+* [[File:img_00145.jpg]] - frame at 6s
+* [[File:img_00146.jpg]] - frame at 6s42ms
+* [[File:img_00147.jpg]] - frame at 6s83ms
+* [[File:img_00148.jpg]] - frame at 6s125ms
+* [[File:img_00149.jpg]] - frame at 6s167ms
+* [[File:img_00150.jpg]] - frame at 6s208ms
+* [[File:img_00151.jpg]] - frame at 6s250ms
+* [[File:img_00152.jpg]] - frame at 6s292ms
+* [[File:img_00153.jpg]] - frame at 6s333ms
+* [[File:img_00154.jpg]] - frame at 6s375ms
+* [[File:img_00155.jpg]] - frame at 6s417ms
+* [[File:img_00156.jpg]] - frame at 6s458ms
+* [[File:img_00157.jpg]] - frame at 6s500ms
+* [[File:img_00158.jpg]] - frame at 6s542ms
+* [[File:img_00159.jpg]] - frame at 6s583ms
+* [[File:img_00160.jpg]] - frame at 6s625ms
+* [[File:img_00161.jpg]] - frame at 6s667ms
+* [[File:img_00162.jpg]] - frame at 6s708ms
+* [[File:img_00163.jpg]] - frame at 6s750ms
+* [[File:img_00164.jpg]] - frame at 6s792ms
+* [[File:img_00165.jpg]] - frame at 6s833ms
+* [[File:img_00166.jpg]] - frame at 6s875ms
+* [[File:img_00167.jpg]] - frame at 6s917ms
+* [[File:img_00168.jpg]] - frame at 6s958ms
+* [[File:img_00169.jpg]] - frame at 7s
+* [[File:img_00170.jpg]] - frame at 7s42ms
+* [[File:img_00171.jpg]] - frame at 7s83ms
+* [[File:img_00172.jpg]] - frame at 7s125ms
+* [[File:img_00173.jpg]] - frame at 7s167ms
+* [[File:img_00174.jpg]] - frame at 7s208ms
+* [[File:img_00175.jpg]] - frame at 7s250ms
+* [[File:img_00176.jpg]] - frame at 7s292ms
+* [[File:img_00177.jpg]] - frame at 7s333ms
+* [[File:img_00178.jpg]] - frame at 7s375ms
+* [[File:img_00179.jpg]] - frame at 7s417ms
+* [[File:img_00180.jpg]] - frame at 7s458ms
+* [[File:img_00181.jpg]] - frame at 7s500ms
+* [[File:img_00182.jpg]] - frame at 7s542ms
+* [[File:img_00183.jpg]] - frame at 7s583ms
+* [[File:img_00184.jpg]] - frame at 7s625ms
+* [[File:img_00185.jpg]] - frame at 7s667ms
+* [[File:img_00186.jpg]] - frame at 7s708ms
+* [[File:img_00187.jpg]] - frame at 7s750ms
+* [[File:img_00188.jpg]] - frame at 7s792ms
+* [[File:img_00189.jpg]] - frame at 7s833ms
+* [[File:img_00190.jpg]] - frame at 7s875ms
+* [[File:img_00191.jpg]] - frame at 7s917ms
+* [[File:img_00192.jpg]] - frame at 7s958ms
+
+=== Copy-paste source lines ===
+
+[[File:hero-sequence.mp4|frame at 0s]]
+[[File:hero-sequence.mp4|frame at 0s42ms]]
+[[File:hero-sequence.mp4|frame at 0s83ms]]
+[[File:hero-sequence.mp4|frame at 0s125ms]]
+[[File:hero-sequence.mp4|frame at 0s167ms]]
+[[File:hero-sequence.mp4|frame at 0s208ms]]
+[[File:hero-sequence.mp4|frame at 0s250ms]]
+[[File:hero-sequence.mp4|frame at 0s292ms]]
+[[File:hero-sequence.mp4|frame at 0s333ms]]
+[[File:hero-sequence.mp4|frame at 0s375ms]]
+[[File:hero-sequence.mp4|frame at 0s417ms]]
+[[File:hero-sequence.mp4|frame at 0s458ms]]
+[[File:hero-sequence.mp4|frame at 0s500ms]]
+[[File:hero-sequence.mp4|frame at 0s542ms]]
+[[File:hero-sequence.mp4|frame at 0s583ms]]
+[[File:hero-sequence.mp4|frame at 0s625ms]]
+[[File:hero-sequence.mp4|frame at 0s667ms]]
+[[File:hero-sequence.mp4|frame at 0s708ms]]
+[[File:hero-sequence.mp4|frame at 0s750ms]]
+[[File:hero-sequence.mp4|frame at 0s792ms]]
+[[File:hero-sequence.mp4|frame at 0s833ms]]
+[[File:hero-sequence.mp4|frame at 0s875ms]]
+[[File:hero-sequence.mp4|frame at 0s917ms]]
+[[File:hero-sequence.mp4|frame at 0s958ms]]
+[[File:hero-sequence.mp4|frame at 1s]]
+[[File:hero-sequence.mp4|frame at 1s42ms]]
+[[File:hero-sequence.mp4|frame at 1s83ms]]
+[[File:hero-sequence.mp4|frame at 1s125ms]]
+[[File:hero-sequence.mp4|frame at 1s167ms]]
+[[File:hero-sequence.mp4|frame at 1s208ms]]
+[[File:hero-sequence.mp4|frame at 1s250ms]]
+[[File:hero-sequence.mp4|frame at 1s292ms]]
+[[File:hero-sequence.mp4|frame at 1s333ms]]
+[[File:hero-sequence.mp4|frame at 1s375ms]]
+[[File:hero-sequence.mp4|frame at 1s417ms]]
+[[File:hero-sequence.mp4|frame at 1s458ms]]
+[[File:hero-sequence.mp4|frame at 1s500ms]]
+[[File:hero-sequence.mp4|frame at 1s542ms]]
+[[File:hero-sequence.mp4|frame at 1s583ms]]
+[[File:hero-sequence.mp4|frame at 1s625ms]]
+[[File:hero-sequence.mp4|frame at 1s667ms]]
+[[File:hero-sequence.mp4|frame at 1s708ms]]
+[[File:hero-sequence.mp4|frame at 1s750ms]]
+[[File:hero-sequence.mp4|frame at 1s792ms]]
+[[File:hero-sequence.mp4|frame at 1s833ms]]
+[[File:hero-sequence.mp4|frame at 1s875ms]]
+[[File:hero-sequence.mp4|frame at 1s917ms]]
+[[File:hero-sequence.mp4|frame at 1s958ms]]
+[[File:hero-sequence.mp4|frame at 2s]]
+[[File:hero-sequence.mp4|frame at 2s42ms]]
+[[File:hero-sequence.mp4|frame at 2s83ms]]
+[[File:hero-sequence.mp4|frame at 2s125ms]]
+[[File:hero-sequence.mp4|frame at 2s167ms]]
+[[File:hero-sequence.mp4|frame at 2s208ms]]
+[[File:hero-sequence.mp4|frame at 2s250ms]]
+[[File:hero-sequence.mp4|frame at 2s292ms]]
+[[File:hero-sequence.mp4|frame at 2s333ms]]
+[[File:hero-sequence.mp4|frame at 2s375ms]]
+[[File:hero-sequence.mp4|frame at 2s417ms]]
+[[File:hero-sequence.mp4|frame at 2s458ms]]
+[[File:hero-sequence.mp4|frame at 2s500ms]]
+[[File:hero-sequence.mp4|frame at 2s542ms]]
+[[File:hero-sequence.mp4|frame at 2s583ms]]
+[[File:hero-sequence.mp4|frame at 2s625ms]]
+[[File:hero-sequence.mp4|frame at 2s667ms]]
+[[File:hero-sequence.mp4|frame at 2s708ms]]
+[[File:hero-sequence.mp4|frame at 2s750ms]]
+[[File:hero-sequence.mp4|frame at 2s792ms]]
+[[File:hero-sequence.mp4|frame at 2s833ms]]
+[[File:hero-sequence.mp4|frame at 2s875ms]]
+[[File:hero-sequence.mp4|frame at 2s917ms]]
+[[File:hero-sequence.mp4|frame at 2s958ms]]
+[[File:hero-sequence.mp4|frame at 3s]]
+[[File:hero-sequence.mp4|frame at 3s42ms]]
+[[File:hero-sequence.mp4|frame at 3s83ms]]
+[[File:hero-sequence.mp4|frame at 3s125ms]]
+[[File:hero-sequence.mp4|frame at 3s167ms]]
+[[File:hero-sequence.mp4|frame at 3s208ms]]
+[[File:hero-sequence.mp4|frame at 3s250ms]]
+[[File:hero-sequence.mp4|frame at 3s292ms]]
+[[File:hero-sequence.mp4|frame at 3s333ms]]
+[[File:hero-sequence.mp4|frame at 3s375ms]]
+[[File:hero-sequence.mp4|frame at 3s417ms]]
+[[File:hero-sequence.mp4|frame at 3s458ms]]
+[[File:hero-sequence.mp4|frame at 3s500ms]]
+[[File:hero-sequence.mp4|frame at 3s542ms]]
+[[File:hero-sequence.mp4|frame at 3s583ms]]
+[[File:hero-sequence.mp4|frame at 3s625ms]]
+[[File:hero-sequence.mp4|frame at 3s667ms]]
+[[File:hero-sequence.mp4|frame at 3s708ms]]
+[[File:hero-sequence.mp4|frame at 3s750ms]]
+[[File:hero-sequence.mp4|frame at 3s792ms]]
+[[File:hero-sequence.mp4|frame at 3s833ms]]
+[[File:hero-sequence.mp4|frame at 3s875ms]]
+[[File:hero-sequence.mp4|frame at 3s917ms]]
+[[File:hero-sequence.mp4|frame at 3s958ms]]
+[[File:hero-sequence.mp4|frame at 4s]]
+[[File:hero-sequence.mp4|frame at 4s42ms]]
+[[File:hero-sequence.mp4|frame at 4s83ms]]
+[[File:hero-sequence.mp4|frame at 4s125ms]]
+[[File:hero-sequence.mp4|frame at 4s167ms]]
+[[File:hero-sequence.mp4|frame at 4s208ms]]
+[[File:hero-sequence.mp4|frame at 4s250ms]]
+[[File:hero-sequence.mp4|frame at 4s292ms]]
+[[File:hero-sequence.mp4|frame at 4s333ms]]
+[[File:hero-sequence.mp4|frame at 4s375ms]]
+[[File:hero-sequence.mp4|frame at 4s417ms]]
+[[File:hero-sequence.mp4|frame at 4s458ms]]
+[[File:hero-sequence.mp4|frame at 4s500ms]]
+[[File:hero-sequence.mp4|frame at 4s542ms]]
+[[File:hero-sequence.mp4|frame at 4s583ms]]
+[[File:hero-sequence.mp4|frame at 4s625ms]]
+[[File:hero-sequence.mp4|frame at 4s667ms]]
+[[File:hero-sequence.mp4|frame at 4s708ms]]
+[[File:hero-sequence.mp4|frame at 4s750ms]]
+[[File:hero-sequence.mp4|frame at 4s792ms]]
+[[File:hero-sequence.mp4|frame at 4s833ms]]
+[[File:hero-sequence.mp4|frame at 4s875ms]]
+[[File:hero-sequence.mp4|frame at 4s917ms]]
+[[File:hero-sequence.mp4|frame at 4s958ms]]
+[[File:hero-sequence.mp4|frame at 5s]]
+[[File:hero-sequence.mp4|frame at 5s42ms]]
+[[File:hero-sequence.mp4|frame at 5s83ms]]
+[[File:hero-sequence.mp4|frame at 5s125ms]]
+[[File:hero-sequence.mp4|frame at 5s167ms]]
+[[File:hero-sequence.mp4|frame at 5s208ms]]
+[[File:hero-sequence.mp4|frame at 5s250ms]]
+[[File:hero-sequence.mp4|frame at 5s292ms]]
+[[File:hero-sequence.mp4|frame at 5s333ms]]
+[[File:hero-sequence.mp4|frame at 5s375ms]]
+[[File:hero-sequence.mp4|frame at 5s417ms]]
+[[File:hero-sequence.mp4|frame at 5s458ms]]
+[[File:hero-sequence.mp4|frame at 5s500ms]]
+[[File:hero-sequence.mp4|frame at 5s542ms]]
+[[File:hero-sequence.mp4|frame at 5s583ms]]
+[[File:hero-sequence.mp4|frame at 5s625ms]]
+[[File:hero-sequence.mp4|frame at 5s667ms]]
+[[File:hero-sequence.mp4|frame at 5s708ms]]
+[[File:hero-sequence.mp4|frame at 5s750ms]]
+[[File:hero-sequence.mp4|frame at 5s792ms]]
+[[File:hero-sequence.mp4|frame at 5s833ms]]
+[[File:hero-sequence.mp4|frame at 5s875ms]]
+[[File:hero-sequence.mp4|frame at 5s917ms]]
+[[File:hero-sequence.mp4|frame at 5s958ms]]
+[[File:hero-sequence.mp4|frame at 6s]]
+[[File:hero-sequence.mp4|frame at 6s42ms]]
+[[File:hero-sequence.mp4|frame at 6s83ms]]
+[[File:hero-sequence.mp4|frame at 6s125ms]]
+[[File:hero-sequence.mp4|frame at 6s167ms]]
+[[File:hero-sequence.mp4|frame at 6s208ms]]
+[[File:hero-sequence.mp4|frame at 6s250ms]]
+[[File:hero-sequence.mp4|frame at 6s292ms]]
+[[File:hero-sequence.mp4|frame at 6s333ms]]
+[[File:hero-sequence.mp4|frame at 6s375ms]]
+[[File:hero-sequence.mp4|frame at 6s417ms]]
+[[File:hero-sequence.mp4|frame at 6s458ms]]
+[[File:hero-sequence.mp4|frame at 6s500ms]]
+[[File:hero-sequence.mp4|frame at 6s542ms]]
+[[File:hero-sequence.mp4|frame at 6s583ms]]
+[[File:hero-sequence.mp4|frame at 6s625ms]]
+[[File:hero-sequence.mp4|frame at 6s667ms]]
+[[File:hero-sequence.mp4|frame at 6s708ms]]
+[[File:hero-sequence.mp4|frame at 6s750ms]]
+[[File:hero-sequence.mp4|frame at 6s792ms]]
+[[File:hero-sequence.mp4|frame at 6s833ms]]
+[[File:hero-sequence.mp4|frame at 6s875ms]]
+[[File:hero-sequence.mp4|frame at 6s917ms]]
+[[File:hero-sequence.mp4|frame at 6s958ms]]
+[[File:hero-sequence.mp4|frame at 7s]]
+[[File:hero-sequence.mp4|frame at 7s42ms]]
+[[File:hero-sequence.mp4|frame at 7s83ms]]
+[[File:hero-sequence.mp4|frame at 7s125ms]]
+[[File:hero-sequence.mp4|frame at 7s167ms]]
+[[File:hero-sequence.mp4|frame at 7s208ms]]
+[[File:hero-sequence.mp4|frame at 7s250ms]]
+[[File:hero-sequence.mp4|frame at 7s292ms]]
+[[File:hero-sequence.mp4|frame at 7s333ms]]
+[[File:hero-sequence.mp4|frame at 7s375ms]]
+[[File:hero-sequence.mp4|frame at 7s417ms]]
+[[File:hero-sequence.mp4|frame at 7s458ms]]
+[[File:hero-sequence.mp4|frame at 7s500ms]]
+[[File:hero-sequence.mp4|frame at 7s542ms]]
+[[File:hero-sequence.mp4|frame at 7s583ms]]
+[[File:hero-sequence.mp4|frame at 7s625ms]]
+[[File:hero-sequence.mp4|frame at 7s667ms]]
+[[File:hero-sequence.mp4|frame at 7s708ms]]
+[[File:hero-sequence.mp4|frame at 7s750ms]]
+[[File:hero-sequence.mp4|frame at 7s792ms]]
+[[File:hero-sequence.mp4|frame at 7s833ms]]
+[[File:hero-sequence.mp4|frame at 7s875ms]]
+[[File:hero-sequence.mp4|frame at 7s917ms]]
+[[File:hero-sequence.mp4|frame at 7s958ms]]
