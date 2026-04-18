@@ -9,6 +9,7 @@ import { X, ShoppingBag, AlertCircle, Minus, Plus, ChevronRight } from 'lucide-r
 import { useCartStore } from '@/store/cartStore';
 import { normalizeBrandName, formatPrice } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
+import { getImageUrl, PLACEHOLDER_IMG } from '@/lib/imageUrl';
 
 interface Product {
   id: number;
@@ -139,12 +140,11 @@ export default function QuickViewModal({ productId, onClose }: QuickViewModalPro
                     {/* Left: Image */}
                     <div className="aspect-square bg-zinc-50 relative overflow-hidden">
                       <img
-                        src={`/images/shoes/${product.imageFilename}`}
+                        src={getImageUrl(product.imageFilename)}
                         alt={product.name}
                         className="w-full h-full object-cover"
                         onError={(e) => {
-                          (e.target as HTMLImageElement).src =
-                            'https://placehold.co/500x500/f4f4f5/71717a?text=No+Image';
+                          (e.target as HTMLImageElement).src = PLACEHOLDER_IMG;
                         }}
                       />
                       {/* IMPROVEMENT: Low stock badge */}

@@ -14,6 +14,7 @@ import { useRouter } from 'next/navigation';
 import { Heart, Eye, ShoppingBag, Check } from 'lucide-react';
 import { normalizeBrandName, formatPrice } from '@/lib/utils';
 import { useCartStore } from '@/store/cartStore';
+import { getImageUrl, PLACEHOLDER_IMG } from '@/lib/imageUrl';
 
 interface ProductCardProps {
   id: number;
@@ -140,13 +141,12 @@ export default function ProductCard({
       {/* ── Image area ────────────────────────────────────────────── */}
       <div className="relative aspect-square overflow-hidden bg-zinc-50">
         <img
-          src={`/images/shoes/${imageFilename}`}
+          src={getImageUrl(imageFilename)}
           alt={name}
           loading="lazy"
           className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
           onError={(e) => {
-            (e.target as HTMLImageElement).src =
-              'https://placehold.co/400x400/f4f4f5/71717a?text=No+Image';
+            (e.target as HTMLImageElement).src = PLACEHOLDER_IMG;
           }}
         />
 

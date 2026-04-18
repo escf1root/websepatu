@@ -16,6 +16,7 @@
 
 import { useRef, useState, useCallback } from 'react';
 import { isValidImageType, isValidImageSize } from '@/lib/utils';
+import { getImageUrl } from '@/lib/imageUrl';
 
 interface ImageUploaderProps {
   currentImageFilename?: string; // existing image to preview
@@ -31,7 +32,7 @@ export default function ImageUploader({
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [previewUrl, setPreviewUrl] = useState<string | null>(
-    currentImageFilename ? `/images/shoes/${currentImageFilename}` : null
+    currentImageFilename ? getImageUrl(currentImageFilename) : null
   );
   const [uploadState, setUploadState] = useState<UploadState>(
     currentImageFilename ? 'done' : 'idle'
@@ -115,7 +116,7 @@ export default function ImageUploader({
   };
 
   const handleReset = () => {
-    setPreviewUrl(currentImageFilename ? `/images/shoes/${currentImageFilename}` : null);
+    setPreviewUrl(currentImageFilename ? getImageUrl(currentImageFilename) : null);
     setSelectedFile(null);
     setUploadState(currentImageFilename ? 'done' : 'idle');
     setErrorMsg('');

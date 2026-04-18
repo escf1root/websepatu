@@ -17,6 +17,7 @@ from sqlalchemy.orm import Session
 from typing import List
 import json
 import uuid
+import os
 from datetime import datetime
 
 from models import init_db, SessionLocal, Product, Stock, Order
@@ -43,9 +44,87 @@ def get_db():
         db.close()
 
 
+# ---------------------------------------------------------------------------
+# Seed data — produk default yang akan selalu muncul di Vercel
+# (SQLite /tmp bersifat ephemeral: setiap cold-start mulai kosong)
+# ---------------------------------------------------------------------------
+DEFAULT_SHOES = [
+    {
+        "name": "Nike Air Max 270",
+        "brand": "Nike",
+        "price": 2100000,
+        "description": "Sepatu lifestyle ikonik dengan bantalan Air Max terbesar di tumit. Desain futuristik dengan warna yang berani, nyaman untuk dipakai seharian.",
+        "image_filename": "nike-airmax-270.jpg",
+    },
+    {
+        "name": "Adidas Ultraboost 22",
+        "brand": "Adidas",
+        "price": 2400000,
+        "description": "Dilengkapi dengan teknologi Boost terbaru untuk pengembalian energi maksimal. Cocok untuk lari jarak jauh maupun aktivitas sehari-hari.",
+        "image_filename": "adidas-ultraboost-22.jpg",
+    },
+    {
+        "name": "New Balance 574",
+        "brand": "New Balance",
+        "price": 1350000,
+        "description": "Sneaker klasik yang telah menjadi ikon streetwear selama puluhan tahun. Sol ENCAP memberikan dukungan dan bantalan yang superior.",
+        "image_filename": "newbalance-574.jpg",
+    },
+    {
+        "name": "Vans Old Skool",
+        "brand": "Vans",
+        "price": 950000,
+        "description": "Skateboard shoe legendaris dengan desain timeless. Bagian atas kanvas dan suede dengan garis tanda tangan Vans yang ikonik.",
+        "image_filename": "vans-oldskool.jpg",
+    },
+    {
+        "name": "Converse Chuck 70",
+        "brand": "Converse",
+        "price": 850000,
+        "description": "Versi premium dari Chuck Taylor All Star original. Konstruksi premium dengan lapisan tumit yang lebih tebal dan ortholite insole.",
+        "image_filename": "converse-chuck70.jpg",
+    },
+    {
+        "name": "Puma RS-X",
+        "brand": "Puma",
+        "price": 1150000,
+        "description": "Terinspirasi dari teknologi RS lari era 80-an. Desain chunky yang bold dengan upper multi-material dan sol tebal yang statement.",
+        "image_filename": "puma-rsx.jpg",
+    },
+]
+
+
+def _auto_seed(db: Session):
+    """Seed default products if table is empty (runs on every Vercel cold start)."""
+    if db.query(Product).count() > 0:
+        return
+    import random
+    for shoe in DEFAULT_SHOES:
+        product = Product(
+            name=shoe["name"],
+            brand=shoe["brand"],
+            price=shoe["price"],
+            description=shoe["description"],
+            image_filename=shoe["image_filename"],
+            created_at=datetime.utcnow(),
+        )
+        db.add(product)
+        db.flush()
+        for size in ["39", "40", "41", "42", "43", "44"]:
+            db.add(Stock(product_id=product.id, size=size, quantity=random.randint(5, 15)))
+    db.commit()
+
+
 @app.on_event("startup")
 def on_startup():
     init_db()
+    # Auto-seed on Vercel where /tmp is always empty after cold start
+    if os.environ.get("VERCEL"):
+        db = SessionLocal()
+        try:
+            _auto_seed(db)
+        finally:
+            db.close()
 
 
 # ------------------------------------------------------------------
@@ -97,6 +176,21 @@ class StockUpdateRequest(BaseModel):
 # ------------------------------------------------------------------
 # Endpoints
 # ------------------------------------------------------------------
+@app.get("/api/health")
+def health_check():
+    """Quick health check — verifies API is reachable."""
+    db = SessionLocal()
+    try:
+        product_count = db.query(Product).count()
+        return {
+            "status": "ok",
+            "vercel": bool(os.environ.get("VERCEL")),
+            "product_count": product_count,
+        }
+    finally:
+        db.close()
+
+
 @app.get("/api/products")
 def get_products(db: Session = Depends(get_db)):
     products = db.query(Product).all()

@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { X, Plus, Minus, Trash2, ShoppingBag } from 'lucide-react';
 import { useCartStore } from '@/store/cartStore';
 import { useRouter } from 'next/navigation';
+import { getImageUrl, PLACEHOLDER_IMG } from '@/lib/imageUrl';
 
 export default function CartDrawer() {
   const { items, isDrawerOpen, closeDrawer, removeItem, updateQuantity } =
@@ -76,12 +77,11 @@ export default function CartDrawer() {
                     {/* Image */}
                     <div className="w-16 h-16 rounded-xl overflow-hidden bg-zinc-50 shrink-0">
                       <img
-                        src={`/images/shoes/${item.imageFilename}`}
+                        src={getImageUrl(item.imageFilename)}
                         alt={item.productName}
                         className="w-full h-full object-cover"
                         onError={(e) => {
-                          (e.target as HTMLImageElement).src =
-                            'https://placehold.co/64x64/f4f4f5/71717a?text=?';
+                          (e.target as HTMLImageElement).src = PLACEHOLDER_IMG;
                         }}
                       />
                     </div>

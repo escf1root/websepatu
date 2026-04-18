@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useCartStore } from '@/store/cartStore';
 import { useRouter } from 'next/navigation';
 import { Check, Loader2, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { getImageUrl, PLACEHOLDER_IMG } from '@/lib/imageUrl';
 
 type Step = 1 | 2 | 3;
 type Zone = 'jakarta' | 'java' | 'outside_java';
@@ -279,11 +280,11 @@ export default function CheckoutForm() {
                     <div key={`${item.productId}-${item.size}`} className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-lg overflow-hidden bg-zinc-50 shrink-0">
                         <img
-                          src={`/images/shoes/${item.imageFilename}`}
+                          src={getImageUrl(item.imageFilename)}
                           alt={item.productName}
                           className="w-full h-full object-cover"
                           onError={(e) => {
-                            (e.target as HTMLImageElement).src = 'https://placehold.co/48x48/f4f4f5/71717a?text=?';
+                            (e.target as HTMLImageElement).src = PLACEHOLDER_IMG;
                           }}
                         />
                       </div>

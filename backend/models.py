@@ -1,13 +1,37 @@
 from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime, Text, ForeignKey
 from sqlalchemy.orm import declarative_base, sessionmaker
 from datetime import datetime
+import os
 
-DATABASE_URL = "sqlite:///./solemate.db"
+# ──────────────────────────────────────────────────────────────────────────────
+# Database URL Resolution
+# Priority:
+#   1. DATABASE_URL env var  → PostgreSQL (Neon / Supabase) — persistent ✅
+#   2. VERCEL env var set    → SQLite /tmp (ephemeral, cold-start loses data) ⚠️
+#   3. Local dev             → SQLite file solemate.db ✅
+# ──────────────────────────────────────────────────────────────────────────────
+_db_url = os.environ.get("DATABASE_URL", "")
 
-engine = create_engine(
-    DATABASE_URL,
-    connect_args={"check_same_thread": False},
-)
+if _db_url:
+    # Neon / Heroku sometimes give postgres:// — SQLAlchemy needs postgresql://
+    if _db_url.startswith("postgres://"):
+        _db_url = _db_url.replace("postgres://", "postgresql://", 1)
+    DATABASE_URL = _db_url
+    engine = create_engine(
+        DATABASE_URL,
+        pool_pre_ping=True,          # detect stale connections in serverless
+        pool_size=1,                 # keep pool small for serverless
+        max_overflow=0,
+    )
+elif os.environ.get("VERCEL"):
+    # Vercel without a DATABASE_URL — still works but data is ephemeral
+    DATABASE_URL = "sqlite:////tmp/solemate.db"
+    engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+else:
+    # Local development
+    DATABASE_URL = "sqlite:///./solemate.db"
+    engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 

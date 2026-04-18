@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { useCartStore } from '@/store/cartStore';
 import CartDrawer from '@/components/CartDrawer';
 import { ShoppingBag, ChevronRight, Minus, Plus, AlertCircle } from 'lucide-react';
+import { getImageUrl, PLACEHOLDER_IMG } from '@/lib/imageUrl';
 
 interface Product {
   id: number;
@@ -115,12 +116,11 @@ export default function ProductDetailPage() {
           <div>
             <div className="aspect-square bg-white rounded-2xl overflow-hidden shadow-md">
               <img
-                src={`/images/shoes/${product.imageFilename}`}
+                src={getImageUrl(product.imageFilename)}
                 alt={product.name}
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src =
-                    'https://placehold.co/600x600/f4f4f5/71717a?text=No+Image';
+                  (e.target as HTMLImageElement).src = PLACEHOLDER_IMG;
                 }}
               />
             </div>

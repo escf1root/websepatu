@@ -13,6 +13,7 @@
 import { useState } from 'react';
 import { normalizeBrandName, formatPrice } from '@/lib/utils';
 import ImageUploader from './ImageUploader';
+import { getImageUrl, PLACEHOLDER_IMG } from '@/lib/imageUrl';
 
 // ── Types ───────────────────────────────────────────────────────────────
 export interface AdminProduct {
@@ -274,12 +275,11 @@ export default function AdminProductTable({ products, onRefresh }: AdminProductT
                 {/* Image */}
                 <td>
                   <img
-                    src={`/images/shoes/${p.imageFilename}`}
+                    src={getImageUrl(p.imageFilename)}
                     alt={p.name}
                     className="admin-table__thumb"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src =
-                        'https://placehold.co/60x60/f4f4f5/71717a?text=?';
+                      (e.target as HTMLImageElement).src = PLACEHOLDER_IMG;
                     }}
                   />
                 </td>
