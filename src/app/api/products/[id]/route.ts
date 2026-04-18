@@ -40,9 +40,9 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
       stockBySize,
       createdAt: p.created_at,
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('API /products/[id] GET Error:', err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json({ error: (err instanceof Error ? err.message : String(err)) }, { status: 500 });
   }
 }
 
@@ -72,9 +72,9 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
       id: p.id,
       message: `Produk '${p.name}' berhasil diperbarui.`,
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('API /products/[id] PUT Error:', err);
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+    return NextResponse.json({ success: false, error: (err instanceof Error ? err.message : String(err)) }, { status: 500 });
   }
 }
 
@@ -94,8 +94,8 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
       success: true,
       message: `Produk ID ${productId} berhasil dihapus.`,
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('API /products/[id] DELETE Error:', err);
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+    return NextResponse.json({ success: false, error: (err instanceof Error ? err.message : String(err)) }, { status: 500 });
   }
 }

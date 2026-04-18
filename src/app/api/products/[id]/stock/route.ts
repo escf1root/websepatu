@@ -57,8 +57,8 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
       stock_by_size: newStockBySize,
       message: `Stok produk ID ${productId} berhasil diperbarui.`,
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('API /products/[id]/stock PUT Error:', err);
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+    return NextResponse.json({ success: false, error: (err instanceof Error ? err.message : String(err)) }, { status: 500 });
   }
 }

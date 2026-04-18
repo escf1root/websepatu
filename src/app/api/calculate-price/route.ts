@@ -41,8 +41,8 @@ export async function POST(req: NextRequest) {
       discount_applied: subtotal >= DISCOUNT_THRESHOLD,
       shipping_zone: shippingZone,
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('API /calculate-price POST Error:', err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json({ error: (err instanceof Error ? err.message : String(err)) }, { status: 500 });
   }
 }

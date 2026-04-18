@@ -40,9 +40,9 @@ export async function GET() {
     });
 
     return NextResponse.json(result);
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('API /products GET Error:', err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json({ error: (err instanceof Error ? err.message : String(err)) }, { status: 500 });
   }
 }
 
@@ -80,8 +80,8 @@ export async function POST(req: NextRequest) {
       id: newDbProduct.id,
       message: `Produk '${newDbProduct.name}' berhasil ditambahkan.`,
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('API /products POST Error:', err);
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+    return NextResponse.json({ success: false, error: (err instanceof Error ? err.message : String(err)) }, { status: 500 });
   }
 }
