@@ -7,24 +7,13 @@ const nextConfig = {
         hostname: 'placehold.co',
       },
       {
-        // Cloudinary CDN — for admin-uploaded product images
+        // Supabase Storage CDN — for admin-uploaded product images
+        // Matches any project: <project-ref>.supabase.co
         protocol: 'https',
-        hostname: 'res.cloudinary.com',
+        hostname: '**.supabase.co',
       },
     ],
-  },
-
-  // Proxy: semua request /api/* diteruskan ke backend FastAPI yang sudah di-deploy di Vercel.
-  // Backend baru: https://backend-weld-theta-10.vercel.app (FastAPI + SQLite /tmp + auto-seed)
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'https://backend-weld-theta-10.vercel.app/api/:path*',
-      },
-    ];
   },
 };
 
 export default nextConfig;
-

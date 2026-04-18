@@ -7,8 +7,8 @@
  * - Old products (seed data) store just a filename: "nike-airmax-270.jpg"
  *   → resolved to /images/shoes/nike-airmax-270.jpg  (local public folder)
  *
- * - New products uploaded via admin panel store a full Cloudinary URL:
- *   "https://res.cloudinary.com/my-cloud/image/upload/..."
+ * - New products uploaded via admin panel store a full Supabase URL:
+ *   "https://<project-ref>.supabase.co/storage/v1/object/public/product-images/..."
  *   → used as-is
  *
  * USAGE:
@@ -25,7 +25,7 @@ export const PLACEHOLDER_IMG =
  * Resolves a product image value to a full URL.
  *
  * @param imageFilename - Either a bare filename ("shoe.jpg") or a full URL
- *                        ("https://res.cloudinary.com/...")
+ *                        ("https://<project>.supabase.co/storage/...")
  * @returns A full URL ready to use in an <img> src or Next.js <Image> src.
  */
 export function getImageUrl(imageFilename: string | null | undefined): string {
@@ -33,7 +33,7 @@ export function getImageUrl(imageFilename: string | null | undefined): string {
     return PLACEHOLDER_IMG;
   }
 
-  // Already a full URL (Cloudinary, Supabase, S3, etc.)
+  // Already a full URL (Supabase Storage, etc.)
   if (imageFilename.startsWith('http://') || imageFilename.startsWith('https://')) {
     return imageFilename;
   }

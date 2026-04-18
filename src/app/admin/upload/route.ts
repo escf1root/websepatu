@@ -3,60 +3,44 @@
  * ─────────────────────────────────────────────────────────────────────
  * API Route: POST /admin/upload
  *
- * Receives a file via multipart/form-data and uploads it to Cloudinary.
- * Returns: { success: true, filename: "https://res.cloudinary.com/..." }
+ * Receives a file via multipart/form-data and uploads it to
+ * Supabase Storage (bucket: "product-images").
  *
- * WHY CLOUDINARY instead of local filesystem?
+ * Returns: { success: true, filename: "https://<project>.supabase.co/..." }
+ *
+ * WHY SUPABASE STORAGE instead of local filesystem?
  * Vercel serverless functions run on a read-only filesystem.
- * Any file written to disk is instantly lost when the function exits.
- * Cloudinary provides persistent, CDN-backed cloud storage for free.
+ * Supabase Storage provides persistent, CDN-backed cloud storage for free
+ * and integrates directly with the Supabase PostgreSQL database.
  *
  * REQUIRED ENVIRONMENT VARIABLES (set in Vercel Dashboard → Settings → Env Vars):
- *   CLOUDINARY_CLOUD_NAME  — e.g. "my-cloud-name"
- *   CLOUDINARY_API_KEY     — e.g. "123456789012345"
- *   CLOUDINARY_API_SECRET  — e.g. "abcDEFghiJKLmnoPQRstuvWXYZ"
+ *   NEXT_PUBLIC_SUPABASE_URL     — e.g. "https://xyzabc123.supabase.co"
+ *   SUPABASE_SERVICE_ROLE_KEY    — from Project Settings → API → service_role key
  * ─────────────────────────────────────────────────────────────────────
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { createHash } from 'crypto';
 
 // ── Config ──────────────────────────────────────────────────────────────
-const CLOUD_NAME  = process.env.CLOUDINARY_CLOUD_NAME  ?? '';
-const API_KEY     = process.env.CLOUDINARY_API_KEY     ?? '';
-const API_SECRET  = process.env.CLOUDINARY_API_SECRET  ?? '';
+const SUPABASE_URL        = process.env.NEXT_PUBLIC_SUPABASE_URL     ?? '';
+const SERVICE_ROLE_KEY    = process.env.SUPABASE_SERVICE_ROLE_KEY    ?? '';
+const BUCKET_NAME         = 'product-images'; // Supabase Storage bucket name
 
-const MAX_SIZE_BYTES = 5 * 1024 * 1024; // 5 MB
-const ACCEPTED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
-const UPLOAD_FOLDER  = 'solemate-shoes'; // Cloudinary folder name
-
-
-// ── Cloudinary signature helper ──────────────────────────────────────────
-/**
- * Generates a signed request for Cloudinary's authenticated uploads.
- * Formula: SHA1( "key1=val1&key2=val2" + API_SECRET ) — keys sorted A→Z.
- * See: https://cloudinary.com/documentation/upload_images#generating_authentication_signatures
- */
-function buildSignature(params: Record<string, string>): string {
-  const paramString = Object.keys(params)
-    .sort()
-    .map((k) => `${k}=${params[k]}`)
-    .join('&');
-  return createHash('sha1').update(paramString + API_SECRET).digest('hex');
-}
+const MAX_SIZE_BYTES  = 5 * 1024 * 1024; // 5 MB
+const ACCEPTED_TYPES  = ['image/jpeg', 'image/png', 'image/webp'];
 
 
 // ── POST handler ────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   // ── 0. Check env vars are configured ─────────────────────────────────
-  if (!CLOUD_NAME || !API_KEY || !API_SECRET) {
-    console.error('[Upload] Cloudinary env vars are not set.');
+  if (!SUPABASE_URL || !SERVICE_ROLE_KEY) {
+    console.error('[Upload] Supabase env vars are not set.');
     return NextResponse.json(
       {
         success: false,
         error:
-          'Konfigurasi server belum selesai. Tambahkan CLOUDINARY_CLOUD_NAME, ' +
-          'CLOUDINARY_API_KEY, dan CLOUDINARY_API_SECRET ke environment variables Vercel.',
+          'Konfigurasi server belum selesai. Tambahkan NEXT_PUBLIC_SUPABASE_URL ' +
+          'dan SUPABASE_SERVICE_ROLE_KEY ke environment variables Vercel.',
       },
       { status: 500 }
     );
@@ -90,39 +74,43 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ── 4. Build Cloudinary signed upload params ────────────────────────
-    const timestamp = Math.round(Date.now() / 1000).toString();
-    const signParams = { folder: UPLOAD_FOLDER, timestamp };
-    const signature  = buildSignature(signParams);
+    // ── 4. Generate unique filename ─────────────────────────────────────
+    const ext      = file.name.split('.').pop()?.toLowerCase() ?? 'jpg';
+    const randomId = Math.random().toString(36).slice(2, 10);
+    const filename = `${Date.now()}-${randomId}.${ext}`;
 
-    // ── 5. Build multipart form for Cloudinary ──────────────────────────
-    const cloudForm = new FormData();
-    cloudForm.append('file', file);
-    cloudForm.append('api_key', API_KEY);
-    cloudForm.append('timestamp', timestamp);
-    cloudForm.append('signature', signature);
-    cloudForm.append('folder', UPLOAD_FOLDER);
+    // ── 5. Read file as ArrayBuffer ─────────────────────────────────────
+    const buffer = await file.arrayBuffer();
 
-    // ── 6. Upload to Cloudinary ─────────────────────────────────────────
-    const cloudRes = await fetch(
-      `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
-      { method: 'POST', body: cloudForm }
-    );
+    // ── 6. Upload to Supabase Storage via REST API ──────────────────────
+    //    POST {SUPABASE_URL}/storage/v1/object/{bucket}/{filename}
+    const uploadUrl = `${SUPABASE_URL}/storage/v1/object/${BUCKET_NAME}/${filename}`;
+    const uploadRes = await fetch(uploadUrl, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${SERVICE_ROLE_KEY}`,
+        'Content-Type': file.type,
+        'x-upsert': 'false',                   // error if filename already exists
+        'Cache-Control': 'max-age=31536000',   // 1 year CDN cache
+      },
+      body: buffer,
+    });
 
-    if (!cloudRes.ok) {
-      const errData = await cloudRes.json().catch(() => ({}));
-      const msg = (errData as { error?: { message?: string } }).error?.message ?? 'Upload ke Cloudinary gagal.';
-      throw new Error(msg);
+    if (!uploadRes.ok) {
+      const errData = await uploadRes.json().catch(() => ({}));
+      const msg = (errData as { message?: string }).message ?? 'Upload ke Supabase Storage gagal.';
+      throw new Error(`Supabase Storage error: ${msg}`);
     }
 
-    const cloudData = await cloudRes.json() as { secure_url: string; public_id: string };
+    // ── 7. Build the public URL ─────────────────────────────────────────
+    //    Format: {SUPABASE_URL}/storage/v1/object/public/{bucket}/{filename}
+    const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/${BUCKET_NAME}/${filename}`;
 
-    // ── 7. Return the Cloudinary URL (stored in DB as image_filename) ───
+    // ── 8. Return the public URL (stored in DB as image_filename) ───────
     return NextResponse.json({
       success: true,
-      filename: cloudData.secure_url,   // full https:// URL
-      url: cloudData.secure_url,
-      public_id: cloudData.public_id,
+      filename: publicUrl,   // full https:// URL — saved to database
+      url: publicUrl,
     });
 
   } catch (err: unknown) {
