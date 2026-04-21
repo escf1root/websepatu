@@ -93,6 +93,87 @@ CREATE POLICY "Service role read orders"
 
 
 -- ─────────────────────────────────────────────────────────────────────────────
+-- 4a. STORAGE — Bucket & RLS Policies untuk product-images
+-- ─────────────────────────────────────────────────────────────────────────────
+-- PENTING: Jalankan bagian ini di Supabase Dashboard → SQL Editor
+-- Ini memastikan bucket ada dan bisa diakses publik tanpa autentikasi.
+
+-- Buat bucket product-images (jika belum ada), set sebagai PUBLIC
+INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+VALUES (
+    'product-images',
+    'product-images',
+    true,                                              -- ← PUBLIC = bisa akses via URL langsung
+    5242880,                                           -- 5MB limit
+    ARRAY['image/jpeg', 'image/png', 'image/webp']
+)
+ON CONFLICT (id) DO UPDATE SET
+    public = true,                                     -- pastikan selalu public
+    file_size_limit = 5242880,
+    allowed_mime_types = ARRAY['image/jpeg', 'image/png', 'image/webp'];
+
+-- RLS untuk storage.objects: izinkan semua orang SELECT (public read)
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_policies
+        WHERE schemaname = 'storage'
+          AND tablename  = 'objects'
+          AND policyname = 'Public read product-images'
+    ) THEN
+        CREATE POLICY "Public read product-images"
+            ON storage.objects FOR SELECT
+            USING (bucket_id = 'product-images');
+    END IF;
+END $$;
+
+-- RLS untuk storage.objects: izinkan service_role INSERT (upload)
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_policies
+        WHERE schemaname = 'storage'
+          AND tablename  = 'objects'
+          AND policyname = 'Service role upload product-images'
+    ) THEN
+        CREATE POLICY "Service role upload product-images"
+            ON storage.objects FOR INSERT
+            WITH CHECK (bucket_id = 'product-images');
+    END IF;
+END $$;
+
+-- RLS untuk storage.objects: izinkan service_role UPDATE (upsert)
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_policies
+        WHERE schemaname = 'storage'
+          AND tablename  = 'objects'
+          AND policyname = 'Service role update product-images'
+    ) THEN
+        CREATE POLICY "Service role update product-images"
+            ON storage.objects FOR UPDATE
+            USING (bucket_id = 'product-images');
+    END IF;
+END $$;
+
+-- RLS untuk storage.objects: izinkan service_role DELETE
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_policies
+        WHERE schemaname = 'storage'
+          AND tablename  = 'objects'
+          AND policyname = 'Service role delete product-images'
+    ) THEN
+        CREATE POLICY "Service role delete product-images"
+            ON storage.objects FOR DELETE
+            USING (bucket_id = 'product-images');
+    END IF;
+END $$;
+
+
+-- ─────────────────────────────────────────────────────────────────────────────
 -- 4. SEED DATA — Produk Default
 -- ─────────────────────────────────────────────────────────────────────────────
 -- Hanya insert jika tabel masih kosong
